@@ -107,3 +107,21 @@ Go to [Top](#top)
 ## A screencast of a very cumbersome example
 
 ![Screencast](examples/cumbersome_dependency_program_interdepent/cumbersome-cast.gif)
+
+
+### Quick Start for Developers
+```bash
+# Clone and install in development mode
+git clone https://github.com/szaghi/FoBiS.git
+cd FoBiS
+pip install -e ".[dev]"
+
+# Run tests
+make test
+
+# Format code
+make format
+
+# Build package
+make build
+```

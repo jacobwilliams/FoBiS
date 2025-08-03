@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 """Testing FoBiS.py"""
 # import doctest
-from __future__ import print_function
 import filecmp
 import os
 import subprocess
 import unittest
 import sys
-sys.path.append("../../main/python/")
+
+# Add the source directory to the path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src', 'main', 'python'))
+
 from fobis.fobis import run_fobis
 
 
@@ -201,7 +203,7 @@ class SuiteTest(unittest.TestCase):
       print('List of FAILED build-tests')
       for fail in failed:
         print(fail)
-    self.assertEquals(num_failures, 0)
+    self.assertEqual(num_failures, 0)
     return
 
   def test_cleanings(self):
@@ -224,7 +226,7 @@ class SuiteTest(unittest.TestCase):
     if len(failed) > 0:
       for fail in failed:
         print(fail)
-    self.assertEquals(num_failures, 0)
+    self.assertEqual(num_failures, 0)
     return
 
   def test_makefile(self):
@@ -247,7 +249,7 @@ class SuiteTest(unittest.TestCase):
     if len(failed) > 0:
       for fail in failed:
         print("Error: Test " + fail + " failed!")
-    self.assertEquals(num_failures, 0)
+    self.assertEqual(num_failures, 0)
     return
 
   def test_installs(self):
@@ -270,7 +272,7 @@ class SuiteTest(unittest.TestCase):
     if len(failed) > 0:
       for fail in failed:
         print(fail)
-    self.assertEquals(num_failures, 0)
+    self.assertEqual(num_failures, 0)
     return
 
   def test_doctests(self):
@@ -293,7 +295,7 @@ class SuiteTest(unittest.TestCase):
     if len(failed) > 0:
       for fail in failed:
         print(fail)
-    self.assertEquals(num_failures, 0)
+    self.assertEqual(num_failures, 0)
     return
 
   def test_rules(self):
@@ -316,7 +318,7 @@ class SuiteTest(unittest.TestCase):
     if len(failed) > 0:
       for fail in failed:
         print(fail)
-    self.assertEquals(num_failures, 0)
+    self.assertEqual(num_failures, 0)
     return
 
 
